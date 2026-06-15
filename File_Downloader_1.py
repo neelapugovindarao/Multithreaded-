@@ -25,3 +25,19 @@ def download(file):
     print(f"Completed: {name}")
     return (name, True)
 
+
+def main():
+    print("\nStarting Downloads...\n")
+
+    results = []
+
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        outputs = executor.map(download, FILES)
+
+        for result in outputs:
+            results.append(result)
+
+    print("\nDownload Summary:\n")
+
+
+
