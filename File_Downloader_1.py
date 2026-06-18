@@ -40,4 +40,21 @@ def main():
     print("\nDownload Summary:\n")
 
 
+    success = 0
+    fail = 0
+
+    for name, status in results:
+        if status:
+            success += 1
+        else:
+            fail += 1
+
+    print(f"Successful: {success}")
+    print(f"Failed: {fail}")
+
+
+if __name__ == "__main__":
+    main()
+
+
 
